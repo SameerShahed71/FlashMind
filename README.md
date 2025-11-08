@@ -6,8 +6,7 @@ Turn dense lecture PDFs or pasted notes into AI-generated flashcards you can stu
 - Drag-and-drop PDF upload or plain text paste area with rich Tailwind styling.
 - Smart flashcard generation via `POST /generate`, handling both JSON and multipart bodies.
 - Responsive 2-column flashcard grid with reveal-on-click answers.
-- Global toast notifications, loading spinner, copy-all-to-clipboard, and quick workspace reset.
-- Backend PDF text extraction powered by `pdfjs-dist` and Gemini 2.5 Flash prompting.
+- Backend PDF text extraction powered by `pdfjs-dist` and Gemini 2.5 Flash.
 
 ## Tech Stack
 - **Frontend:** Vite, React 19, Tailwind CSS 3, Fetch API.
