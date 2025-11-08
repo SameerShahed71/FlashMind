@@ -2,6 +2,8 @@
 
 Turn dense lecture PDFs or pasted notes into AI-generated flashcards you can study immediately. The project pairs a lightweight Vite + React frontend with an Express backend that calls Google’s Gemini models to build question/answer pairs.
 
+<img width="1127" height="845" alt="image" src="https://github.com/user-attachments/assets/808ab9dc-8d31-4206-a250-653b3371e04b" />
+
 ## Features
 - Drag-and-drop PDF upload or plain text paste area with rich Tailwind styling.
 - Smart flashcard generation via `POST /generate`, handling both JSON and multipart bodies.
@@ -19,7 +21,6 @@ FlashMind/
 ├── frontend/       # Vite + React single-page interface
 └── LICENSE         # MIT License
 ```
-
 ## Requirements
 - Node.js 20+
 - npm 10+
