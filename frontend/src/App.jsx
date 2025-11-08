@@ -55,7 +55,11 @@ function App() {
       }
 
       setFlashcards(data)
-      showToast('success', `Generated ${data.length} flashcards.`)
+      if (data.length === 0) {
+        showToast('error', 'No flashcards generated. Provide more information in your notes or try a different PDF.')
+      } else{
+        showToast('success', `Generated ${data.length} flashcards.`)
+      }
     } catch (error) {
       console.error(error)
       showToast('error', error.message || 'Something went wrong while generating flashcards.')
@@ -99,7 +103,7 @@ function App() {
             <h1 className="mt-2 text-4xl font-semibold text-slate-900">FlashMind 🔮</h1>
             <p className="mt-2 text-base text-slate-500">Turn your notes into flashcards</p>
             <p className="mt-1 text-sm text-slate-400">
-              Upload a PDF lecture deck or paste your notes below. We&apos;ll generate smart cards you can study instantly.
+              Upload a PDF lecture deck or paste your notes below. We'll generate smart cards you can study instantly.
             </p>
           </div>
 
@@ -306,13 +310,13 @@ function Toast({ type, message, onClose }) {
       role="status"
     >
       <p className="font-medium">{message}</p>
-      <button
+      {/* <button
         type="button"
         className="text-xs font-semibold opacity-60 transition hover:opacity-100"
-        onClick={onClose}
+        onClick= {onClose}
       >
         Close
-      </button>
+      </button> */}
     </div>
   )
 }

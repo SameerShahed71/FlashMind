@@ -75,12 +75,36 @@ app.post("/generate", async (req, res) => {
 
   // Build prompt for Gemini
   const prompt = `
-  Generate 8 concise flashcards from this text.
-  Each flashcard should be a JSON object with "question" and "answer".
-  Return valid JSON array only:
-  [{"question": "...", "answer": "..."}, ...]
-  Text:
-  ${text.slice(0, 2000)}
+  You are an expert educational content creator. Generate a comprehensive set of flashcards from the provided text.
+  
+  GUIDELINES:
+  - Create flashcards proportional to content length (aim for 1 card per 50-75 words of substantive content)
+  - Cover ALL key concepts, definitions, processes, relationships, and important details
+  - Vary question types: definitions, explanations, comparisons, applications, cause-effect, examples
+  - Progress from foundational concepts to advanced details
+  - Include both broad concepts AND specific details that students need to remember
+  - Make questions clear, specific, and unambiguous
+  - Keep answers concise but complete (2-4 sentences max)
+  - EXCLUDE: administrative details, course logistics, instructor info, assignment dates
+  
+  QUESTION TYPE EXAMPLES:
+  - "What is [concept]?" or "Define [term]"
+  - "What are the key characteristics of [concept]?"
+  - "How does [process] work?"
+  - "What is the difference between [A] and [B]?"
+  - "What causes [phenomenon]?"
+  - "What are the main components of [system]?"
+  - "Why is [concept] important?"
+  - "What happens when [condition]?"
+  - "What is an example of [concept]?"
+  
+  Return ONLY a valid JSON array with no markdown formatting:
+  [{"question": "...", "answer": "..."}, {"question": "...", "answer": "..."}, ...]
+  
+  TEXT TO ANALYZE:
+  ${text}
+  
+  Generate the flashcards now:
   `;
 
   try {
