@@ -53,7 +53,7 @@ FlashMind/
 - **Response:** `[{ "question": "string", "answer": "string" }, ... ]`
 - On errors, the backend returns `500 { "error": "Generation failed" }`.
 
-# Pull Requests Welcome!
+## Pull Requests Welcome!
 - Fork the repo, create a feature branch, and submit changes via pull request.
 - Ensure your code follows the existing style and passes basic linting.
 - Include a brief description of the changes and any related issue numbers.
