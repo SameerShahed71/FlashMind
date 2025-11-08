@@ -44,8 +44,6 @@ FlashMind/
 3. `npm run dev`
 4. Open the printed Vite URL (defaults to `http://localhost:5173`). Use the UI to upload a PDF or paste text, then click **Generate Flashcards**. The app will call `http://localhost:3000/generate`.
 
-> Building for production: `npm run build` (outputs to `frontend/dist`).
-
 ## API Contract
 - **Endpoint:** `POST http://localhost:3000/generate`
 - **Request body:**
@@ -53,11 +51,6 @@ FlashMind/
   - Multipart: `pdf` file field (PDF up to ~20 MB)
 - **Response:** `[{ "question": "string", "answer": "string" }, ... ]`
 - On errors, the backend returns `500 { "error": "Generation failed" }`.
-
-## Development Tips
-- The frontend uses Tailwind; edit `src/App.jsx` for components and `src/index.css` for global styles.
-- Flashcards are revealed on click; the copy button concatenates all questions/answers for quick sharing.
-- Keep the backend console open to inspect Gemini responses if parsing fails—adjust the prompt as needed.
 
 # Pull Requests Welcome!
 - Fork the repo, create a feature branch, and submit changes via pull request.
